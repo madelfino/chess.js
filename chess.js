@@ -528,12 +528,6 @@ var Chess = function(fen) {
         var square = i + PAWN_OFFSETS[us][0];
         if (board[square] == null) {
             add_move(board, moves, i, square, BITS.NORMAL);
-
-          /* double square */
-          var square = i + PAWN_OFFSETS[us][1];
-          if (second_rank[us] === rank(i) && board[square] == null) {
-            add_move(board, moves, i, square, BITS.BIG_PAWN);
-          }
         }
 
         /* pawn captures */
@@ -544,8 +538,6 @@ var Chess = function(fen) {
           if (board[square] != null &&
               board[square].color === them) {
               add_move(board, moves, i, square, BITS.CAPTURE);
-          } else if (square === ep_square) {
-              add_move(board, moves, i, ep_square, BITS.EP_CAPTURE);
           }
         }
       } else {
