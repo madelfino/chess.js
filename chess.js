@@ -493,7 +493,6 @@ var Chess = function(fen) {
     var moves = [];
     var us = turn;
     var them = swap_color(us);
-    var second_rank = {b: RANK_7, w: RANK_2};
 
     var first_sq = SQUARES.a8;
     var last_sq = SQUARES.h1;
