@@ -480,9 +480,9 @@ var Chess = function(fen) {
 
   function generate_moves(options) {
     function add_move(board, moves, from, to, flags) {
-      /* if pawn promotion */
+      /* if pawn promotion (occures on 3rd/6th rank in Makruk) */
       if (board[from].type === PAWN &&
-         (rank(to) === RANK_8 || rank(to) === RANK_1)) {
+         (rank(to) === RANK_6 || rank(to) === RANK_3)) {
           /* In Makruk pawns can only promote to queens */
           moves.push(build_move(board, from, to, flags, QUEEN));
       } else {
